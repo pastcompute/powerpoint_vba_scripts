@@ -1,7 +1,7 @@
 
 Dim X As New Class1
 Sub InitializeApp()
-    Debug.Print "InitializeApp"
+    ' Debug.Print "InitializeApp"
     Set X.PPTApp = Application
 End Sub
 
@@ -9,16 +9,15 @@ Sub PrintWindowSizes()
     Dim w As DocumentWindow
 
     Let c = ActivePresentation.Windows.Count
-    Debug.Print "PrintWindowSizes Windows.Count==" & c
+    ' Debug.Print "PrintWindowSizes Windows.Count==" & c
 
     For Each w In Application.Windows
         Debug.Print w.WindowState & "," & w.Left & "+" & w.Top & "+" & w.Width & "x" & w.Height
     Next
-    
 End Sub
 
 Sub PositionWindows()
-    Debug.Print "PositionWindows"
+    ' Debug.Print "PositionWindows"
     Call PrintWindowSizes
     Dim a As DocumentWindow
     Dim w As DocumentWindow
@@ -46,12 +45,8 @@ Sub PositionWindows()
 
 End Sub
 
-Sub Fixme()
-    ' Application.ActivePresentation.VBProject.VBE.VBProjects.Item
-End Sub
 Sub OnSlideChange()
-    Debug.Print "OnSlideChange(). ViewType==" & ActiveWindow.ViewType & " ppViewNotesPage==" & ppViewNotesPage
-    
+    ' Debug.Print "OnSlideChange(). ViewType==" & ActiveWindow.ViewType & " ppViewNotesPage==" & ppViewNotesPage
     
     Dim currentSlide As slide
     Dim currentWindow As DocumentWindow
@@ -66,14 +61,14 @@ Sub OnSlideChange()
         
         ' Loop through all open windows
         For Each targetWindow In Application.Windows
-            Debug.Print "targetWindow.ViewType==" & targetWindow.ViewType
+            ' Debug.Print "targetWindow.ViewType==" & targetWindow.ViewType
             If targetWindow.ViewType = ppViewNotesPage And Not targetWindow Is currentWindow Then
                 slideIndex = currentSlide.slideIndex
-                Debug.Print "Current slide index: " & slideIndex
+                ' Debug.Print "Current slide index: " & slideIndex
                 
                 If slideIndex <= currentSlide.Parent.Slides.Count And slideIndex > 0 Then
                     targetWindow.View.GotoSlide slideIndex
-                    Debug.Print "Synchronized slide in target window."
+                    ' Debug.Print "Synchronized slide in target window."
                 End If
             End If
         Next targetWindow
@@ -86,23 +81,17 @@ Sub CountNotHiddenSlides()
     Dim slide As slide
     Dim notHiddenCount As Integer
     
-    ' Set the presentation object to the active presentation
     Set pptPresentation = ActivePresentation
     
-    ' Initialize the count
-    notHiddenCount = 0
-    
-    ' Loop through each slide in the presentation
+    notHiddenCount = 0    
     For Each slide In pptPresentation.Slides
-        ' Check if the slide is hidden
         If Not slide.SlideShowTransition.Hidden Then
             notHiddenCount = notHiddenCount + 1
         End If
     Next slide
     
-    ' Display the result
-    ' MsgBox "Number of not-hidden slides: " & notHiddenCount
-    Debug.Print "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
+    ' Debug.Print "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
+    MsgBox "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
 End Sub
 
 
