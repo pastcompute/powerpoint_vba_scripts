@@ -1,6 +1,6 @@
 # Why are the notes only on the bottom?
 
-For whatever reason, when editing a slideshow in the main editing view in Powerpoint, the notes are on the bottom of the screen and the panel they are in seems to be  not undockable or moveable.
+In recent times I've mostly used LibreOffice Impress, or Google Slides, but sometimes for reasons, I need to use Powerpoint. For whatever reason, when editing a slideshow in the main editing view in Powerpoint, the notes are on the bottom of the screen and the panel they are in seems to be  not undockable or moveable.
 
 Solutions may include:
 - use LibreOffice - LibreOffice has some features that I think make it better than Powerpoint, except in this case it is in fact worse, you can only use the Notes view (which is in Powerpoint too). In both cases there is a Notes master but this affects how the notes pages print... This applies for LibreOffice Impress v7.2.1 which was installed on my machine
