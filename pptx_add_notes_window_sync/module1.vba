@@ -73,9 +73,10 @@ Sub OnSlideChange()
             End If
         Next targetWindow
     End If
-    CountNotHiddenSlides
+    CountNotHiddenSlides1
 End Sub
 
+' TODO fixme make the other one a function that we call, and remove this duplicated code urgh
 Sub CountNotHiddenSlides()
     Dim pptPresentation As Presentation
     Dim slide As slide
@@ -89,9 +90,24 @@ Sub CountNotHiddenSlides()
             notHiddenCount = notHiddenCount + 1
         End If
     Next slide
-    
-    ' Debug.Print "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
     MsgBox "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
+End Sub
+
+Sub CountNotHiddenSlides1()
+    Dim pptPresentation As Presentation
+    Dim slide As slide
+    Dim notHiddenCount As Integer
+    
+    Set pptPresentation = ActivePresentation
+    
+    notHiddenCount = 0    
+    For Each slide In pptPresentation.Slides
+        If Not slide.SlideShowTransition.Hidden Then
+            notHiddenCount = notHiddenCount + 1
+        End If
+    Next slide
+    
+    Debug.Print "Slides=" & pptPresentation.Slides.Count & " Visible=" & notHiddenCount
 End Sub
 
 
