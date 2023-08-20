@@ -35,3 +35,7 @@ Instead, it is possible to use VBA to show two Windows, one in normal edit view 
 # Other ways
 
 - I could create a Powerpoint addin, or much around with macro signing, but this is nice and simple given it is not something I need to do a lot.
+
+# Note
+
+Only tested on Powerpoint for Mac version 16.74
