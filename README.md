@@ -16,11 +16,11 @@ Instead, it is possible to use VBA to show two Windows, one in normal edit view 
 3. Create a class module
     - right click on `VBAProject (your filename)` in the VBE
     - Insert > Class Module
-    - Paste the content of `sync_notes_window/class.vba` into the new module, it will be called `Class1` by default
+    - Paste the content of `pptx_add_notes_window_sync/class.vba` into the new module, it will be called `Class1` by default
 4. Create a normal module
     - right click on `VBAProject (your filename)` in the VBE
     - Insert > Module
-    - Paste the content of `sync_notes_window/module.vba` into the new module, it will be called `Module1` by default
+    - Paste the content of `pptx_add_notes_window_sync/module1.vba` into the new module, it will be called `Module1` by default
 5. Save your pptm file
 6. To enable, both now, and also needed **each time you reopen the file**,
     - Tools > Macro > Macros...
