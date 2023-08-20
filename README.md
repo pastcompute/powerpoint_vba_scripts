@@ -22,12 +22,16 @@ Instead, it is possible to use VBA to show two Windows, one in normal edit view 
     - Insert > Module
     - Paste the content of `sync_notes_window/module.vba` into the new module, it will be called `Module1` by default
 5. Save your pptm file
-6. To enable, both now, and also needed each time you reopen the file,
+6. To enable, both now, and also needed **each time you reopen the file**,
     - Tools > Macro > Macros...
     - Run the macro called `InitializeApp`
 7. **When you are finished with your presentation, remember to resave your file as a pptx if needed**
 
-  
+# Extra goodies
+
+- There is a macro called `PositionWindows`, run this after activating to create a second notes view window and fit them side by side
+- There is a macro called `CountNotHiddenSlides` which will count the number of slides that are _not_ hidden
+
 # Other ways
 
 - I could create a Powerpoint addin, or much around with macro signing, but this is nice and simple given it is not something I need to do a lot.
